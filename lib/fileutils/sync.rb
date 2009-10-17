@@ -17,6 +17,7 @@ module FileUtils
     end
 
     def self.conflict?(src, dst, nofollow=false)
+      return false unless File.exist?(dst)
       return File.kind(src, nofollow) != File.kind(dst, nofollow)
     end
 
