@@ -46,5 +46,5 @@ module Term
     return true
   end
 
-  module_fuction :countdown
+  module_function :countdown
 end
