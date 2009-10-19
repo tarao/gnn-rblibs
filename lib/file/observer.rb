@@ -113,8 +113,7 @@ class File
     end
 
     def self.watch(files, events, &block)
-#       klass = Win32.installed? || Inotify.installed? || Naive.installed?
-      klass = Win32.installed? || Naive.installed?
+      klass = Win32.installed? || Inotify.installed? || Naive.installed?
       raise 'No file observer' unless klass
       files = [files] unless files.is_a?(Array)
       mtime = {}
