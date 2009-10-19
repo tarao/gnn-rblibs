@@ -35,8 +35,8 @@ class File
         mask |= ::Win32::ChangeNotify::FILE_NAME  if (events & MOVE) != 0
         mask |= ::Win32::ChangeNotify::LAST_WRITE if (events & CHANGE) != 0
         mask |= ::Win32::ChangeNotify::SIZE       if (events & CHANGE) != 0
-        files = File.dirname(files.first) unless dir
-        cn = ::Win32::ChangeNotify.new(files, false, mask)
+        directory = dir ? files : File.dirname(files.first)
+        cn = ::Win32::ChangeNotify.new(directory, false, mask)
         loop do
           cn.wait do |arr|
             arr.each do |st|
