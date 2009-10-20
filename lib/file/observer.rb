@@ -43,7 +43,9 @@ class File
               if dir || files.find{|f| f == st.file_name}
                 # FIXME: convert st.action to event
                 sleep(0.1)
-                yield({ :name => st.file_name, :event => events })
+                yield({ :name => st.file_name,
+                        :event => events,
+                        :class => self })
                 return true
               end
             end
@@ -72,7 +74,8 @@ class File
         begin
           files.each{|f| notifier.add_watch(f, events)}
           notifier.each_event do |e|
-            yield({ :event => e.mask })
+            yield({ :event => e.mask,
+                    :class => self })
             return true
           end
         ensure
@@ -99,7 +102,9 @@ class File
           # FIXME: other events
           fname = files.find{|f| File.mtime(f) != mtime[f]}
           if fname
-            yield({ :name => fname, :event => events })
+            yield({ :name => fname,
+                    :event => events,
+                    :class => self })
             return true
           end
           sleep(s)
