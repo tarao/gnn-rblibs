@@ -42,7 +42,6 @@ class File
             arr.each do |st|
               if dir || files.find{|f| f == st.file_name}
                 # FIXME: convert st.action to event
-                sleep(0.1)
                 yield({ :name => st.file_name,
                         :event => events,
                         :class => self })
