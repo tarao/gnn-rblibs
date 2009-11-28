@@ -1,9 +1,24 @@
 = gnn-rblibs
 
-Description goes here.
+Some Ruby tweaks.
+
+== Installation
+
+First, make your gem source gemcutter by
+
+  gem install gemcutter
+  gem tumble
+
+or
+
+  gem sources -a http://gemcutter.org
+
+then
+
+  gem install gnn-rblibs
 
 == Note on Patches/Pull Requests
- 
+
 * Fork the project.
 * Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a
