@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{gnn-rblibs}
-  s.version = "0.0.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["tarao"]
   s.date = %q{2009-11-28}
-  s.description = %q{Some Ruby tweaks}
+  s.description = %q{Some Ruby tweaks for file operations, commandline parsers, etc.}
   s.email = %q{tarao.gnn@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "gnn-rblibs.gemspec",
      "lib/dir/each_leaf.rb",
      "lib/file/kind.rb",
      "lib/file/observer.rb",

@@ -6,7 +6,7 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "gnn-rblibs"
     gem.summary = %Q{Some Ruby tweaks}
-    gem.description = %Q{Some Ruby tweaks}
+    gem.description = %Q{Some Ruby tweaks for file operations, commandline parsers, etc.}
     gem.email = "tarao.gnn@gmail.com"
     gem.homepage = "http://github.com/tarao/gnn-rblibs"
     gem.authors = ["tarao"]
