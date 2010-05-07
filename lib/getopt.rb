@@ -1,5 +1,6 @@
 class GetOpt
   def self.escape(str, quote=true)
+    str = str.to_s
     return "''" if str.empty?
     str = str.dup
 
