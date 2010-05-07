@@ -1,9 +1,12 @@
 class GetOpt
   def self.escape(str, quote=true)
-    str = str.to_s
-    return str unless str.match(/[\\\"\'\s]/)
-    str = str.gsub(/\\/, '\\\\').gsub(/\"/, '\\\"')
-    return quote ? '"'+str+'"' : str
+    return "''" if str.empty?
+    str = str.dup
+
+    str.gsub!(/([^A-Za-z0-9_\-.,:\/@\n])/n, "\\\\\\1")
+    str.gsub!(/\n/, "'\n'")
+
+    return str
   end
 
   attr_accessor :args, :parsed, :rest, :parser

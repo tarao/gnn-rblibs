@@ -4,17 +4,6 @@ Some Ruby tweaks.
 
 == Installation
 
-First, make your gem source gemcutter by
-
-  gem install gemcutter
-  gem tumble
-
-or
-
-  gem sources -a http://gemcutter.org
-
-then
-
   gem install gnn-rblibs
 
 == Note on Patches/Pull Requests
