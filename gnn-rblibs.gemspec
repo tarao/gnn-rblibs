@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{gnn-rblibs}
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["tarao"]
@@ -37,7 +37,7 @@ Gem::Specification.new do |s|
      "lib/term/countdown.rb",
      "lib/webrick/single_thread_server.rb",
      "lib/www/mechanize/get.rb",
-     "spec/gnn-rblibs_spec.rb",
+     "spec/getopt_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
   ]
@@ -48,7 +48,7 @@ Gem::Specification.new do |s|
   s.summary = %q{Some Ruby tweaks}
   s.test_files = [
     "spec/spec_helper.rb",
-     "spec/gnn-rblibs_spec.rb"
+     "spec/getopt_spec.rb"
   ]
 
   if s.respond_to? :specification_version then
