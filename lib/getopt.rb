@@ -1,11 +1,23 @@
 class GetOpt
-  def self.escape(str, quote=true)
+  def self.escape(str, quote=false)
     str = str.to_s
-    return "''" if str.empty?
-    str = str.dup
+    regex = /[^A-Za-z0-9_\-.,:\/@\n]/n
 
-    str.gsub!(/([^A-Za-z0-9_\-.,:\/@\n])/n, "\\\\\\1")
-    str.gsub!(/\n/, "'\n'")
+    if quote # use quote
+      return str unless str.match(regex)
+      str = str.dup
+      quote
+
+      str.gsub!(/\\/, '\\\\')
+      str.gsub!(/\"/, '\\\"')
+      str = '"'+str+'"'
+    else     # use backslash
+      return "''" if str.empty?
+      str = str.dup
+
+      str.gsub!(regex, '\\\\\\&')
+      str.gsub!(/\n/, "'\n'")
+    end
 
     return str
   end
